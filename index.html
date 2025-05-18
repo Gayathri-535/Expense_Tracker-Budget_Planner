@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker & Budget Planner</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  
+</head>
+<body>
+  <!-- Burger Menu Button -->
+  <div class="burger-menu" onclick="toggleMenu()">
+    <div class="burger-line"></div>
+    <div class="burger-line"></div>
+    <div class="burger-line"></div>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebar" class="sidebar">
+    <ul>
+
+      <li><a href="javascript:void(0);" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('budget')">Set Budget</a></li>
+      <li><a href="#" onclick="showSection('expenseTracker')">Expense Tracker</a></li>
+      <li><a href="#" onclick="showSection('summary')">Summary</a></li>
+      <li><a href="#" onclick="showSection('analytics')">Analytics</a></li>
+    </ul>
+  </div>
+
+
+  <div class="container">
+    <!-- Home Section -->
+    <div id="home" class="section active">
+      <div class="home-content">
+        <h1>Expense Tracker & Budget Planner</h1>
+        <p>Your ultimate tool to manage expenses and set budgets</p>
+        <!-- New Buttons -->
+        <div class="home-buttons">
+          <button class="home-btn" onclick="openFinancialLinks()">Explore More</button>
+          <button class="home-btn" onclick="startFinancialQuiz()">Have Fun</button>
+
+
+        </div>
+        
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div id="budget" class="section hidden">
+        <h2 class="budget-heading">Set Your Budget</h2>
+        <div class="budget-form">
+          <div class="budget-item"><label>Groceries:</label><input type="number" id="groceriesBudget"></div>
+          <div class="budget-item"><label>Bills:</label><input type="number" id="billsBudget"></div>
+          <div class="budget-item"><label>Entertainment:</label><input type="number" id="entertainmentBudget"></div>
+          <div class="budget-item"><label>Transport:</label><input type="number" id="transportBudget"></div>
+          <button onclick="setBudget()">Set Budgets</button>
+        </div>
+      </div>
+    </div>
+    
+
+    <div id="expenseTracker" class="section hidden">
+      <h2>Add Expense</h2>
+  
+      <!-- Currency Selector -->
+      <label for="currency-selector">Select Currency:</label>
+      <select id="currency-selector">
+          <option value="USD">$ - USD</option>
+          <option value="EUR">€ - EUR</option>
+          <option value="INR">₹ - INR</option>
+          <option value="GBP">£ - GBP</option>
+          <option value="JPY">¥ - JPY</option>
+      </select>
+      <input type="text" id="expenseName" placeholder="Expense Name">
+      <input type="number" id="expenseAmount" placeholder="Amount">
+      <select id="categorySelect">
+        <option value="Groceries">Groceries</option>
+        <option value="Bills">Bills</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Transport">Transport</option>
+      </select>
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <div id="summary" class="section hidden">
+      <h2>Expense Summary</h2>
+      <div id="summaryContent"></div>
+    </div>
+
+    <div id="analytics" class="section hidden">
+      <h2>Advanced Analytics</h2>
+      <canvas id="categorySpendChart" style="max-width: 400px; max-height: 400px;"></canvas>
+
+    </div>
+    
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
